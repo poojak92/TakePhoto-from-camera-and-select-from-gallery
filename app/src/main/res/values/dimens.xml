@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="toolbar_drawable_padding">10dp</dimen>
+    <dimen name="toolbar_title_margin">15dp</dimen>
+    <dimen name="toolbar_title_text_size">18sp</dimen>
+
+    // Upload documents
+    <dimen name="document_name_text_size">12sp</dimen>
+    <dimen name="document_scan_name_margin_left">30dp</dimen>
+    <dimen name="document_capture_view_margin">20dp</dimen>
+    <dimen name="document_vertical_capture_view_margin_left">55dp</dimen>
+    <dimen name="document_vertical_capture_view_margin_top">22dp</dimen>
+    <dimen name="document_scan_cancel_text_size">17sp</dimen>
+</resources>

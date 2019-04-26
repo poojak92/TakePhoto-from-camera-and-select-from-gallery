@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GalleryImages</string>
+    <string name="text_document_scan">Document Scan</string>
+</resources>

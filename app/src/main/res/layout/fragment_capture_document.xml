@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- Toolbar Layout  -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/abl_toolbar"
+        android:background="@color/upload_document_toolbar_color"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize">
+
+        <ImageView
+            android:id="@+id/iv_flash"
+            android:padding="@dimen/toolbar_drawable_padding"
+            android:src="@drawable/ic_flash_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="26dp"
+            android:layout_height="26dp" />
+
+
+        <TextView
+            android:id="@+id/tv_toolbar_title"
+            android:layout_marginLeft="@dimen/toolbar_title_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_flash"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="@string/text_document_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_capture"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_bottom"
+        app:layout_constraintTop_toBottomOf="@+id/abl_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    <com.google.android.cameraview.CameraView
+        android:id="@+id/cv_camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.google.android.cameraview.CameraView>
+
+    <LinearLayout
+        android:id="@+id/ll_horizontal_camera_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <include layout="@layout/layout_horizontal_image_capture"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_vertical_camera_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <include layout="@layout/layout_vertical_image_capture"/>
+
+    </LinearLayout>
+
+    </FrameLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_bottom"
+        android:background="@color/black"
+        app:layout_constraintDimensionRatio="h,2:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/tv_document_info"
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingLeft="@dimen/document_scan_name_margin_left"
+            android:paddingRight="@dimen/document_scan_name_margin_left"
+            android:textColor="@color/document_description_color"
+            android:text="Document should not be older than 3 months"
+            app:layout_constraintBottom_toTopOf="@+id/iv_capture"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/iv_scan_document"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/iv_capture"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_scan_selfie"
+            android:layout_width="26dp"
+            android:layout_height="26dp" />
+
+        <ImageView
+            android:id="@+id/iv_capture"
+            android:textColor="@color/document_description_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_shutter"
+            android:layout_width="26dp"
+            android:layout_height="26dp" />
+
+        <TextView
+            android:id="@+id/tv_document_name"
+            android:text="Selfie"
+            android:textAlignment="center"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            app:layout_constraintRight_toRightOf="@+id/iv_scan_document"
+            app:layout_constraintBottom_toTopOf="@+id/tv_document_description"
+            app:layout_constraintTop_toBottomOf="@+id/iv_scan_document"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_scan_document"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/tv_document_description"
+            android:textColor="@color/document_description_color"
+            android:text="ashj haghs gahj"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_document_name"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_document_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" />
+
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:text="Cancel"
+            android:textSize="14sp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_capture"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/circular_progress_bar" />
+
+</android.support.constraint.ConstraintLayout>
